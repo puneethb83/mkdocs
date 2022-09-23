@@ -1,14 +1,14 @@
 pipeline {
   environment {
-    registry = "kausvaibhav/docker-repo-for-maven-build"
-    registryCredential = 'docker-creds'
+    registry = "puneethb83/puneeth-sample-docker"
+    registryCredential = 'docker_ID'
     dockerImage = ''
   }
   agent any
   stages {
     stage('Cloning Git') {
       steps {
-        git 'https://github.com/kaushikk007/mkdocs.git'
+        git 'https://github.com/puneethb83/mkdocs.git'
       }
     }
     stage('Building image') {
@@ -21,7 +21,7 @@ pipeline {
 
     stage('Test Mkdocs' ) {
                 agent {
-                docker { image 'kausvaibhav/docker-repo-for-maven-build:$BUILD_NUMBER' }
+                docker { image 'puneethb83/puneeth-sample-docker:$BUILD_NUMBER' }
             }
             steps {
                 sh 'mkdocs --version'
