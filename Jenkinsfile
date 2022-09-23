@@ -1,7 +1,7 @@
 pipeline {
 environment {
-registry = "kausvaibhav/docker-repo-for-maven-build"
-registryCredential = 'docker-creds'
+registry = "puneethb83/puneeth-sample-docker"
+registryCredential = 'docker_ID'
 dockerImage = ''
 }
 agent any
@@ -9,7 +9,7 @@ stages {
 stage('Cloning our Git') {
 steps {
 script{
-git 'https://github.com/kaushikk007/mkdocs.git'
+git 'https://github.com/puneethb83/mkdocs.git'
 }
 }
 }
