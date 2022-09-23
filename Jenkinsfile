@@ -31,7 +31,9 @@ dockerImage.push()
 }
 stage('Remove Unused docker image') {
       steps{
+            script {
         sh "docker rmi $registry:$BUILD_NUMBER"
+}
 }
 }
 }
