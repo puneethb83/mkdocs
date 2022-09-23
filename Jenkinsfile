@@ -8,7 +8,9 @@ agent any
 stages {
 stage('Cloning our Git') {
 steps {
+script{
 git 'https://github.com/kaushikk007/mkdocs.git'
+}
 }
 }
 stage('Building our image') {
